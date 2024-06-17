@@ -53,7 +53,7 @@ function App() {
 
             {/*  navigating buttons*/}
 
-            <div className="flex gap-1 ">
+            <div className="flex gap-1 flex-nowrap overflow-x-auto no-scrollbar  ">
               <button className=" flex rounded-full px-8 py-4 border-2 border-transparent focus:outline-none focus:bg-[#2e9569] placeholder-gray-400 transition-all duration-300  shadow-md bg-[#1f1f1f]">
                 <span>Sale </span>
                 <span className="bg-black rounded-full text-white text-xs p-1 ml-2">
