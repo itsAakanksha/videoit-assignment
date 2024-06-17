@@ -3,7 +3,7 @@ import { HomeIcon, MagnifyingGlassIcon, PlusIcon, ChatBubbleLeftEllipsisIcon, Us
 
 const NavigationBar = () => {
   return (
-    <div className='flex w-full justify-center'>
+    <div className='flex w-full justify-center z-10  '>
     <div className="fixed bottom-0 left-1/2 right-1/2 transform -translate-x-1/2 w-[99vw] p-4 bg-white/10 backdrop-blur-lg shadow-lg flex justify-evenly items-center  rounded-3xl">
       <button className="flex flex-col items-center text-white">
         <HomeIcon className="h-6 w-6" />

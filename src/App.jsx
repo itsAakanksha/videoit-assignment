@@ -4,8 +4,16 @@ import { useState } from "react";
 import Loader from "./component/Loader";
 import "./App.css";
 import NavigationBar from "./component/NavigationBar";
+import SecondPage from "./component/SecondPage";
+import ThirdPage from "./component/ThirdPage";
+
+
 
 function App() {
+
+
+
+
   const [loading, setLoading] = useState(false);
 
   const loadingTime = () => {
@@ -98,9 +106,12 @@ function App() {
 
      
     {/* Navigating buttons*/}
-
-    <NavigationBar/>
-
+{
+    // <NavigationBar/>
+  
+}
+    <SecondPage/>
+    <ThirdPage/>
          
 
           </div>
