@@ -40,7 +40,7 @@ function App() {
                 xmlns="http://www.w3.org/2000/svg"
                 role="img"
                 aria-labelledby="search"
-                class="w-5 h-5 text-gray-400 ml-8 mt-5 absolute font-bold "
+                className="w-5 h-5 text-gray-400 ml-8 mt-5 absolute font-bold "
               >
                 <path
                   d="M7.667 12.667A5.333 5.333 0 107.667 2a5.333 5.333 0 000 10.667zM14.334 14l-2.9-2.9"
@@ -52,7 +52,7 @@ function App() {
               </svg>
 
               <input
-                class="input rounded-full px-16 py-4 border-2 border-transparent focus:outline-none focus:border-blue-500 placeholder-gray-400 transition-all duration-300 w-full shadow-md bg-[#1f1f1f]"
+                className="input rounded-full px-16 py-4 border-2 border-transparent focus:outline-none focus:border-blue-500 placeholder-gray-400 transition-all duration-300 w-full shadow-md bg-[#1f1f1f]"
                 placeholder="Search for treasures"
                 required=""
                 type="text"
@@ -88,18 +88,18 @@ function App() {
       
      <div className="flex  h-[50vh] gap-1">
       <div className="flex flex-col w-full gap-1 justify-between">
-      <div className="flex-grow bg-blue-400 rounded-[50px]  rounded-tl-none">first</div>
-      <div className="bg-yellow-400 rounded-[50px]  "  style={{ flex: '0 1 30%' }}>second</div>
+      <div className="flex-grow bg-blue-400 rounded-[40px]  rounded-tl-none">first</div>
+      <div className="bg-yellow-400 rounded-[40px]  "  style={{ flex: '0 1 30%' }}>second</div>
       </div>
       <div className="flex flex-col w-full gap-1 justify-between">
-      <div className=" bg-blue-400  rounded-[50px]  "  style={{ flex: '0 1 30%' }}>third</div>
-      <div className="bg-yellow-400 flex-grow rounded-[50px]   rounded-br-none">fourth</div>
+      <div className=" bg-blue-400  rounded-[40px]  "  style={{ flex: '0 1 30%' }}>third</div>
+      <div className="bg-yellow-400 flex-grow rounded-[40px]   rounded-br-none">fourth</div>
       </div>
       
      </div>
 
      {/* spring collection*/}
-     <div className="bg-[#fbbbb9] rounded-[50px] p-6 my-[-20px]">
+     <div className="bg-[#fbbbb9] rounded-[40px] p-6 my-[-20px]">
       <h3 className="text-xl text-black font-semibold">Spring Collection `23</h3>
       <p className="text-gray-700">make yourself happy</p>
      </div>

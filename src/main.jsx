@@ -4,6 +4,7 @@ import App from './App.jsx'
 import './index.css'
 import { Route, RouterProvider, createBrowserRouter, createRoutesFromElements } from 'react-router-dom'
 import ThirdPage from './component/ThirdPage.jsx'
+import VideoPlayer from './component/VideoPlayer.jsx'
 
 
 const route = createBrowserRouter(
@@ -11,6 +12,8 @@ const route = createBrowserRouter(
     <Route>
     <Route path='/' element = {<App/>}/>
     <Route path='video' element = {<ThirdPage/>}/>
+    <Route path='video/full' element = {<VideoPlayer/>}/>
+
 
     </Route>
   )
