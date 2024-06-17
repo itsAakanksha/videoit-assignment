@@ -23,7 +23,7 @@ const VideoPlayer = () => {
 
 
   return (
-    <div className="relative w-full h-[50vh] mx-auto flex-grow z-0 ">
+    <div className="relative w-full h-[50vh] mx-auto flex-grow z-0 p-2 ">
       <video
         ref={videoRef}
         autoPlay muted

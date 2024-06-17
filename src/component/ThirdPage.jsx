@@ -12,25 +12,25 @@ function ThirdPage() {
     <div className="h-screen" >
       <VideoPlayer />
 
-      <div className=" p-4 bg-black flex justify-around items-center border-b-2 border-gray-300  border-opacity-15 ">
+      <div className=" p-2 bg-black flex justify-around items-center border-b-2 border-gray-300  border-opacity-15 ">
         <button className="flex flex-col items-center text-gray-400">
-          <HeartIcon className="h-6 w-6" />
-          <p>LIKE</p>
+          <HeartIcon className="h-4 w-4" />
+          <p className="text-xs">LIKE</p>
         </button>
 
         <button className="flex flex-col items-center text-gray-400">
-          <ChatBubbleLeftEllipsisIcon className="h-6 w-6" />
-          <p>MESSAGE</p>
+          <ChatBubbleLeftEllipsisIcon className="h-4 w-4" />
+          <p className="text-xs">MESSAGE</p>
         </button>
         <button className="flex flex-col items-center text-gray-400">
-          <ArrowUturnRightIcon className="h-6 w-6" />
-          <p>SHARE</p>
+          <ArrowUturnRightIcon className="h-4 w-4" />
+          <p className="text-xs">SHARE</p>
         </button>
       </div>
 
-      <div className="my-8">
+      <div className=" p-4 ">
       <p className="text-xl tracking-wide">Tropical Leaf Earning</p>
-      <p className="text-3xl font-bold py-4">$14.00</p>
+      <p className="text-3xl font-bold py-2">$14.00</p>
       </div>
 
       {/*  CARD COMPONENT*/}

@@ -111,7 +111,7 @@ function App() {
   
 }
     <SecondPage/>
-    <ThirdPage/>
+  
          
 
           </div>
