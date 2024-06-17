@@ -3,7 +3,8 @@ import { HomeIcon, MagnifyingGlassIcon, PlusIcon, ChatBubbleLeftEllipsisIcon, Us
 
 const NavigationBar = () => {
   return (
-    <div className="fixed bottom-0 mx-auto  transform -translate-x-1/2 w-[80vw] p-4 bg-white/10 backdrop-blur-lg shadow-lg flex justify-evenly items-center rounded-3xl">
+    <div className='flex w-full justify-center'>
+    <div className="fixed bottom-0 left-- right-1/2 transform -translate-x-1/2 w-[99vw] p-4 bg-white/10 backdrop-blur-lg shadow-lg flex justify-evenly items-center rounded-3xl">
       <button className="flex flex-col items-center text-white">
         <HomeIcon className="h-6 w-6" />
       </button>
@@ -19,6 +20,7 @@ const NavigationBar = () => {
       <button className="flex flex-col items-center text-white">
         <UserCircleIcon className="h-6 w-6" />
       </button>
+    </div>
     </div>
   );
 };
