@@ -115,10 +115,10 @@ function App() {
                   <img
                     src={logo}
                     alt="second"
-                    className="object-cover w-24 h-24"
+                    className="object-cover w-32 h-32"
                   />
                   <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                    <span className="text-white">Your Text Here</span>
+                    <span className="text-white">Get Your Gifts</span>
                   </div>
                 </div>
               </div>
@@ -128,10 +128,10 @@ function App() {
                   <img
                     src={logo}
                     alt="third"
-                    className="object-cover w-24 h-24"
+                    className="object-cover w-32 h-32"
                   />
                   <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                    <span className="text-black">Your Text Here</span>
+                    <span className="text-black">Top Sellers</span>
                   </div>
                 </div>
                 {/* Fourth */}
