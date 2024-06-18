@@ -7,7 +7,8 @@ import "./App.css";
 import NavigationBar from "./component/NavigationBar";
 import SecondPage from "./component/SecondPage";
 import ThirdPage from "./component/ThirdPage";
-
+import { HeartIcon } from "@heroicons/react/24/solid";
+import {ShoppingBagIcon} from "@heroicons/react/24/solid";
 import VideoPlayer from "./component/VideoPlayer";
 
 function App() {
@@ -44,7 +45,13 @@ function App() {
   return (
     <>
       <div className=" px-4">
-        <Loader />
+      <div className="flex justify-between">
+      {loading && <HeartIcon className="w-5 h-5 m-auto" />}
+      <Loader />
+      {loading && <ShoppingBagIcon className="w-5 h-5 m-auto" />}
+    </div>
+    
+
         {loading && (
           <div className="flex flex-col gap-6">
             <div className="relative w-full ">

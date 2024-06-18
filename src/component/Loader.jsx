@@ -1,9 +1,12 @@
 import React from "react";
 import logo from "../../public/logo.png";
 import { easeInOut, motion } from "framer-motion";
+
 function Loader() {
   return (
     <>
+
+   
       <motion.div className="w-full h-full mx-auto"
       initial={{ scale: 0, rotate: 360, y: 300}}
       animate={{
@@ -23,6 +26,8 @@ function Loader() {
     "
         />
       </motion.div>
+
+    
     </>
   );
 }
