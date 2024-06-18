@@ -19,16 +19,16 @@ const VideoPlayer = ({ isPlaying, setIsPlaying, src }) => {
 
   const { videoSrc, setVideoSrc } = useContext(VideoContext);
 
-  useEffect(() => {
-    const video = videoRef.current;
-    if (isPlaying) {
-      video.play().catch((error) => {
-        console.error("Error playing video:", error);
-      });
-    } else {
-      video.pause();
-    }
-  }, []);
+  // useEffect(() => {
+  //   const video = videoRef.current;
+  //   if (isPlaying) {
+  //     video.play().catch((error) => {
+  //       console.error("Error playing video:", error);
+  //     });
+  //   } else {
+  //     video.pause();
+  //   }
+  // }, []);
 
 
   const handlePlayPause = () => {
@@ -74,6 +74,12 @@ const VideoPlayer = ({ isPlaying, setIsPlaying, src }) => {
     const seconds = Math.floor(time % 60);
     return `${minutes}:${seconds < 10 ? "0" : ""}${seconds}`;
   };
+
+  useEffect(() => {
+    if (!isPlaying) {
+      videoRef.current.play();
+    }
+  }, [isPlaying]);
  
   console.log(isPlaying);
 
@@ -88,7 +94,7 @@ const VideoPlayer = ({ isPlaying, setIsPlaying, src }) => {
         ref={videoRef}
         onTimeUpdate={handleTimeUpdate}
         onLoadedMetadata={handleLoadedMetadata}
-        autoPlay
+        autoPlay = {!isPlaying}
         muted
         className="w-full h-full object-cover "
         onClick={handlePlayPause}
@@ -146,8 +152,9 @@ const VideoPlayer = ({ isPlaying, setIsPlaying, src }) => {
       )}
 
       {!isPlaying && (
+        
         <div
-          className="absolute inset-0 flex items-center justify-center"
+          className="absolute inset-x-0 top-1/4 flex items-center justify-center"
           onClick={handlePlayPause}
         >
           <button className="bg-gray-200 bg-opacity-20 backdrop-blur-sm border-opacity-30 text-white rounded-full p-3">

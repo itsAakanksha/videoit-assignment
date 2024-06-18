@@ -13,6 +13,7 @@ import VideoPlayer from "./component/VideoPlayer";
 function App() {
   const videoSource = [
     "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4",
+    "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
     "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",
     "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4",
     "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4",
@@ -101,7 +102,7 @@ function App() {
             <div className="flex  gap-1 relative h-[40vh]">
               <div className="flex flex-col w-full md:w-1/2 gap-1 justify-evenly">
                 {/* First */}
-                <div className="bg-blue-400 rounded-[20px] rounded-tl-none overflow-hidden flex-grow">
+                <div className=" rounded-[20px] rounded-tl-none overflow-hidden flex-grow">
                   <div className="w-full h-full">
                     <VideoPlayer
                       src={videoSource[1]}
@@ -135,7 +136,7 @@ function App() {
                   </div>
                 </div>
                 {/* Fourth */}
-                <div className="bg-yellow-400 rounded-[20px] rounded-br-none overflow-hidden flex-grow">
+                <div className=" rounded-[20px] rounded-br-none overflow-hidden flex-grow">
                   <div className="w-full h-full">
                     <VideoPlayer
                       src={videoSource[2]}
