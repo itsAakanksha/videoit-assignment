@@ -6,7 +6,7 @@ import { PauseIcon } from "@heroicons/react/24/solid";
 import { PlayIcon } from "@heroicons/react/24/solid";
 import { ForwardIcon } from "@heroicons/react/24/solid";
 import { BackwardIcon } from "@heroicons/react/24/solid";
-
+import { motion } from "framer-motion";
 
 import {VideoContext} from '../context/VideoContext';
 
@@ -19,16 +19,7 @@ const VideoPlayer = ({ isPlaying, setIsPlaying, src }) => {
 
   const { videoSrc, setVideoSrc } = useContext(VideoContext);
 
-  // useEffect(() => {
-  //   const video = videoRef.current;
-  //   if (isPlaying) {
-  //     video.play().catch((error) => {
-  //       console.error("Error playing video:", error);
-  //     });
-  //   } else {
-  //     video.pause();
-  //   }
-  // }, []);
+
 
 
   const handlePlayPause = () => {
@@ -107,7 +98,8 @@ const VideoPlayer = ({ isPlaying, setIsPlaying, src }) => {
       </video>
       
       {isPlaying && (
-        <div 
+        <div      // Move to the current position
+       
         className="fixed bottom-1 left-1/2 right-1/2 transform -translate-x-1/2 w-[90vw]
         px-6 bg-gray-600/25 backdrop:blur-sm shadow-lg flex flex-col justify-between  rounded-full">
           <input

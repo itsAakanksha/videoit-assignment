@@ -110,3 +110,5 @@ input[type="range"]::-ms-thumb {
   text-align: center;
   pointer-events: none; /* Ensures the text does not interfere with image clicks */
 }
+
+

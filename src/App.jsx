@@ -6,10 +6,10 @@ import logo from ".././public/logo.png";
 import "./App.css";
 import NavigationBar from "./component/NavigationBar";
 import SecondPage from "./component/SecondPage";
-import ThirdPage from "./component/ThirdPage";
 import { HeartIcon } from "@heroicons/react/24/solid";
 import {ShoppingBagIcon} from "@heroicons/react/24/solid";
 import VideoPlayer from "./component/VideoPlayer";
+import {motion} from 'framer-motion'
 
 function App() {
   const videoSource = [
@@ -83,7 +83,11 @@ function App() {
 
             {/*  navigating buttons*/}
 
-            <div className="flex gap-1 flex-nowrap overflow-x-auto no-scrollbar  ">
+            <motion.div
+            initial={{x:200,scale:0}}
+            animate={{x:0,scale:1}}
+            transition={{duration:0.5}}
+            className="flex gap-1 flex-nowrap overflow-x-auto no-scrollbar  ">
               <button className=" flex rounded-full px-8 py-4 border-2 border-transparent focus:outline-none bg-[#2e9569] placeholder-gray-400 transition-all duration-300  shadow-md ">
                 <span>Sale </span>
                 <span className="bg-black rounded-full text-white text-xs p-1 ml-2">
@@ -102,14 +106,18 @@ function App() {
               <button className="input rounded-full px-8 py-4 border-2 border-transparent focus:outline-none focus:bg-[#2e9569] placeholder-gray-400 transition-all duration-300  shadow-md bg-[#1f1f1f]">
                 Necklace
               </button>
-            </div>
+            </motion.div>
 
             {/* videos */}
 
             <div className="flex  gap-1 relative h-[40vh]">
               <div className="flex flex-col w-full md:w-1/2 gap-1 justify-evenly">
                 {/* First */}
-                <div className=" rounded-[20px] rounded-tl-none overflow-hidden flex-grow">
+                <motion.div
+                initial={{ x: -100, y: -100,scale:0 }}   // Start from the top-left corner
+                animate={{ x: 0, y: 0,scale:1 }}         // Move to the current position
+                transition={{ duration: 0.5 }}
+                className=" rounded-[20px] rounded-tl-none overflow-hidden flex-grow">
                   <div className="w-full h-full">
                     <VideoPlayer
                       src={videoSource[1]}
@@ -117,9 +125,13 @@ function App() {
                       setIsPlaying={setIsPlaying}
                     />
                   </div>
-                </div>
+                </motion.div>
                 {/* Second */}
-                <div className="bg-[#A0C5E6] rounded-[40px] relative flex-grow flex items-center justify-center overflow-hidden">
+                <motion.div
+                initial={{ x: -100,scale:0  }}   
+                animate={{ x: 0,scale:1 }}     
+                transition={{ duration: 0.5 }}
+                className="bg-[#A0C5E6] rounded-[40px] relative flex-grow flex items-center justify-center overflow-hidden">
                   <img
                     src={logo}
                     alt="second"
@@ -128,11 +140,15 @@ function App() {
                   <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
                     <span className="text-white">Get Your Gifts</span>
                   </div>
-                </div>
+                </motion.div>
               </div>
               <div className="flex flex-col w-full md:w-1/2 h-full gap-1 justify-evenly">
                 {/* Third */}
-                <div className="bg-[#EFD4AE] rounded-[40px] relative flex-grow flex items-center justify-center overflow-hidden">
+                <motion.div
+                initial={{ x: 200,scale:0  }}   // Start from the top-left corner
+                animate={{ x: 0 , scale:1}}         // Move to the current position
+                transition={{ duration: 0.5 }}
+                className="bg-[#EFD4AE] rounded-[40px] relative flex-grow flex items-center justify-center overflow-hidden">
                   <img
                     src={logo}
                     alt="third"
@@ -141,9 +157,13 @@ function App() {
                   <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
                     <span className="text-black">Top Sellers</span>
                   </div>
-                </div>
+                </motion.div>
                 {/* Fourth */}
-                <div className=" rounded-[20px] rounded-br-none overflow-hidden flex-grow">
+                <motion.div
+                initial={{ x: 200, y: 200, scale:0 }}   // Start from the top-left corner
+                animate={{ x: 0, y: 0, scale:1 }}         // Move to the current position
+                transition={{ duration: 0.5 }}
+                className=" rounded-[20px] rounded-br-none overflow-hidden flex-grow">
                   <div className="w-full h-full">
                     <VideoPlayer
                       src={videoSource[2]}
@@ -151,7 +171,7 @@ function App() {
                       setIsPlaying={setIsPlaying}
                     />
                   </div>
-                </div>
+                </motion.div>
               </div>
             </div>
 
