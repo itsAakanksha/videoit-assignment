@@ -2,17 +2,31 @@ import React from "react";
 import { useEffect } from "react";
 import { useState } from "react";
 import Loader from "./component/Loader";
+import logo from ".././public/logo.png";
 import "./App.css";
 import NavigationBar from "./component/NavigationBar";
 import SecondPage from "./component/SecondPage";
 import ThirdPage from "./component/ThirdPage";
 
-
+import VideoPlayer from "./component/VideoPlayer";
 
 function App() {
+  const videoSource = [
+    "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4",
+    "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",
+    "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4",
+    "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4",
+    "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4",
+    "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/SubaruOutbackOnStreetAndDirt.mp4",
+    "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/VolkswagenGTIReview.mp4",
+    "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/WhatCarCanYouGetForAGrand.mp4",
+  ];
 
+  const [isPlaying, setIsPlaying] = useState(false);
 
-
+  const handlePlayPause = () => {
+    setIsPlaying(!isPlaying);
+  };
 
   const [loading, setLoading] = useState(false);
 
@@ -62,7 +76,7 @@ function App() {
             {/*  navigating buttons*/}
 
             <div className="flex gap-1 flex-nowrap overflow-x-auto no-scrollbar  ">
-              <button className=" flex rounded-full px-8 py-4 border-2 border-transparent focus:outline-none focus:bg-[#2e9569] placeholder-gray-400 transition-all duration-300  shadow-md bg-[#1f1f1f]">
+              <button className=" flex rounded-full px-8 py-4 border-2 border-transparent focus:outline-none bg-[#2e9569] placeholder-gray-400 transition-all duration-300  shadow-md ">
                 <span>Sale </span>
                 <span className="bg-black rounded-full text-white text-xs p-1 ml-2">
                   24
@@ -84,36 +98,62 @@ function App() {
 
             {/* videos */}
 
+            <div className="flex  gap-1">
+              <div className="flex flex-col w-full gap-1 justify-between">
+{/* first */}
+                <div className=" bg-blue-400 rounded-[40px]  rounded-tl-none overflow-hidden">
+                  <div className="w-full h-full">
+                    <VideoPlayer
+                      src={videoSource[1]}
+                      isPlaying={isPlaying}
+                      setIsPlaying={setIsPlaying}
+                    />
+                  </div>
+                </div>
+{/* second */}
+                <div
+                  className=" bg-[#A0C5E6] rounded-[40px] relative text-container-2  "
+                  style={{ flex: "0 1 30%" }}
+                >
+                  <img src={logo} alt="second" />
+                </div>
+              </div>
+{/* third */}
+              <div className="flex flex-col w-full gap-1 justify-between">
+                <div
+                  className=" bg-[#EFD4AE]  rounded-[40px] relative text-container "
+                  style={{ flex: "0 1 30%" }}
+                >
+                  <img src={logo} alt="third" />
+                </div>
+{/* fourth*/}
+                <div className="bg-yellow-400  rounded-[40px]   rounded-br-none overflow-hidden">
+                  <div className="w-full h-full  ">
+                    <VideoPlayer
+                      src={videoSource[2]}
+                      isPlaying={isPlaying}
+                      setIsPlaying={setIsPlaying}
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
 
-      
-     <div className="flex  h-[50vh] gap-1">
-      <div className="flex flex-col w-full gap-1 justify-between">
-      <div className="flex-grow bg-blue-400 rounded-[40px]  rounded-tl-none">first</div>
-      <div className="bg-yellow-400 rounded-[40px]  "  style={{ flex: '0 1 30%' }}>second</div>
-      </div>
-      <div className="flex flex-col w-full gap-1 justify-between">
-      <div className=" bg-blue-400  rounded-[40px]  "  style={{ flex: '0 1 30%' }}>third</div>
-      <div className="bg-yellow-400 flex-grow rounded-[40px]   rounded-br-none">fourth</div>
-      </div>
-      
-     </div>
+            {/* spring collection*/}
+            <div className="bg-[#fbbbb9] rounded-[40px] p-6 my-[-20px]">
+              <h3 className="text-xl text-black font-semibold">
+                Spring Collection `23
+              </h3>
+              <p className="text-gray-700">make yourself happy</p>
+            </div>
 
-     {/* spring collection*/}
-     <div className="bg-[#fbbbb9] rounded-[40px] p-6 my-[-20px]">
-      <h3 className="text-xl text-black font-semibold">Spring Collection `23</h3>
-      <p className="text-gray-700">make yourself happy</p>
-     </div>
-
-     
-    {/* Navigating buttons*/}
-{
-    // <NavigationBar/>
-  
-}
-    <SecondPage/>
-  
-         
-
+            {/* Navigating buttons*/}
+            {<NavigationBar />}
+            <SecondPage
+              videoSource={videoSource.slice(2)}
+              isPlaying={isPlaying}
+              setIsPlaying={setIsPlaying}
+            />
           </div>
         )}
       </div>

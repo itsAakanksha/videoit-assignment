@@ -12,7 +12,7 @@ function Loader() {
         y: [200, 200,0],       
       }}
       transition={{
-        duration: 1,        
+        duration: 2,        
         times: [0, 0.8, 1],   
       }}
       >
