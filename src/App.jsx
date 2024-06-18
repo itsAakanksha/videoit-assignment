@@ -138,7 +138,7 @@ function App() {
                     className="object-cover w-32 h-32"
                   />
                   <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                    <span className="text-white">Get Your Gifts</span>
+                    <span className="text-white">Top Sellers </span>
                   </div>
                 </motion.div>
               </div>
@@ -155,7 +155,7 @@ function App() {
                     className="object-cover w-32 h-32"
                   />
                   <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                    <span className="text-black">Top Sellers</span>
+                    <span className="text-black">Get Your Gifts</span>
                   </div>
                 </motion.div>
                 {/* Fourth */}
