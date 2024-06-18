@@ -42,7 +42,7 @@ function App() {
 
   return (
     <>
-      <div className="py-2 px-4">
+      <div className=" px-4">
         <Loader />
         {loading && (
           <div className="flex flex-col gap-6">
@@ -98,10 +98,10 @@ function App() {
 
             {/* videos */}
 
-            <div className="flex  gap-1 relative h-[50vh]">
-              <div className="flex flex-col w-full gap-1 justify-evenly">
-{/* first */}
-                <div className=" bg-blue-400 rounded-[40px]  rounded-tl-none overflow-hidden">
+            <div className="flex  gap-1 relative h-[40vh]">
+              <div className="flex flex-col w-full md:w-1/2 gap-1 justify-evenly">
+                {/* First */}
+                <div className="bg-blue-400 rounded-[20px] rounded-tl-none overflow-hidden flex-grow">
                   <div className="w-full h-full">
                     <VideoPlayer
                       src={videoSource[1]}
@@ -110,25 +110,33 @@ function App() {
                     />
                   </div>
                 </div>
-{/* second */}
-                <div
-                  className=" bg-[#A0C5E6] rounded-[40px] relative text-container-2  "
-                  style={{ flex: "1 4 10%" }}
-                >
-                  <img src={logo} alt="second" className=" object-cover w-20 h-20 " />
+                {/* Second */}
+                <div className="bg-[#A0C5E6] rounded-[40px] relative flex-grow flex items-center justify-center overflow-hidden">
+                  <img
+                    src={logo}
+                    alt="second"
+                    className="object-cover w-24 h-24"
+                  />
+                  <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                    <span className="text-white">Your Text Here</span>
+                  </div>
                 </div>
               </div>
-{/* third */}
-              <div className="flex flex-col w-full h-full gap-1 justify-evenly">
-                <div
-                  className=" bg-[#EFD4AE]  rounded-[40px] relative text-container "
-                  style={{ flex: "1 4 10%" }}
-                >
-                  <img src={logo} alt="third" className="object-cover w-20 h-20 " />
+              <div className="flex flex-col w-full md:w-1/2 h-full gap-1 justify-evenly">
+                {/* Third */}
+                <div className="bg-[#EFD4AE] rounded-[40px] relative flex-grow flex items-center justify-center overflow-hidden">
+                  <img
+                    src={logo}
+                    alt="third"
+                    className="object-cover w-24 h-24"
+                  />
+                  <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                    <span className="text-black">Your Text Here</span>
+                  </div>
                 </div>
-{/* fourth*/}
-                <div className="bg-yellow-400  rounded-[40px]   rounded-br-none overflow-hidden">
-                  <div className="w-full h-full  ">
+                {/* Fourth */}
+                <div className="bg-yellow-400 rounded-[20px] rounded-br-none overflow-hidden flex-grow">
+                  <div className="w-full h-full">
                     <VideoPlayer
                       src={videoSource[2]}
                       isPlaying={isPlaying}

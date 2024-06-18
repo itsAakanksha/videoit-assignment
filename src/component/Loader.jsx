@@ -5,11 +5,11 @@ function Loader() {
   return (
     <>
       <motion.div className="w-full h-full mx-auto"
-      initial={{ scale: 0, rotate: 360, y: 200}}
+      initial={{ scale: 0, rotate: 360, y: 300}}
       animate={{
         scale: [0,2,0.5], 
-        rotate: [0,360,480],  
-        y: [200, 200,0],       
+        rotate: [0,360,360],  
+        y: [300,300,0],       
       }}
       transition={{
         duration: 2,        
@@ -19,7 +19,7 @@ function Loader() {
         <img
           src={logo}
           alt=""
-          className=" logo w-20 h-20 m-auto
+          className=" logo w-20 h-20 mx-auto
     "
         />
       </motion.div>
